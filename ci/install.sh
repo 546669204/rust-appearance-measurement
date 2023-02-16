@@ -24,7 +24,7 @@ elif [[ "$OS_FAMILY" == "macOS" ]]; then
     brew -v install opencv"4.2.0"
 elif [[ "$OS_FAMILY" == "Windows" ]]; then
 	export CHOCO_LLVM_VERSION=15.0.5
-    choco install -y llvm --version "$CHOCO_LLVM_VERSION"
+    # choco install -y llvm --version "$CHOCO_LLVM_VERSION"
     choco install -y opencv --version "$OPENCV_VERSION"
 
 
