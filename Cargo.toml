@@ -1,0 +1,34 @@
+[package]
+name = "rust-appearance-measurement"
+version = "0.0.0"
+description = "一个基于摄像头的姿态监控跨平台桌面应用"
+authors = ["546669204"]
+license = ""
+repository = "https://github.com/546669204/rust-appearance-measurement"
+edition = "2021"
+rust-version = "1.57"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "1.1", features = [] }
+glob = "0.3.1"
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.1", features = ["api-all","system-tray"] }
+opencv = "0.76.4"
+libmath = "0.2.1"
+lazy_static = "1.4.0"
+log = "0.4.17"
+reqwest = { version = "0.11.14", features = ["blocking"] }
+notify-rust = "4.7.0"
+
+[features]
+# by default Tauri runs in production mode
+# when `tauri dev` runs it is executed with `cargo run --no-default-features` if `devPath` is an URL
+default = ["custom-protocol"]
+# this feature is used used for production builds where `devPath` points to the filesystem
+# DO NOT remove this
+custom-protocol = ["tauri/custom-protocol"]
