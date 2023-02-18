@@ -69,6 +69,14 @@ jobs:
       #   with:
       #     name: my-artifact
       #     path: target/release/bundle/**/*
+      - name: Archive Release
+        uses: thedoctor0/zip-release@0.7.1
+        with:
+          type: 'zip'
+          filename: '${{ runner.os }}.zip'
+          directory: './target/release/'
+          exclusions: 'build bundle deps examples incremental'
+
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "target/release/*.zip"
