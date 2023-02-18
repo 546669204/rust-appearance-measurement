@@ -23,7 +23,8 @@ libmath = "0.2.1"
 lazy_static = "1.4.0"
 log = "0.4.17"
 reqwest = { version = "0.11.14", features = ["blocking"] }
-notify-rust = { version = "4.7.0", features = ["d"] }
+notify-rust = { version = "4.7.1", features = ["d"] }
+
 
 [features]
 # by default Tauri runs in production mode
